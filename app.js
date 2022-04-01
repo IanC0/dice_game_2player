@@ -12,6 +12,7 @@ newGame.addEventListener("click", () => {
     scoreCount2 = 0;
     scoreText.innerHTML = `Your score is ${scoreCount}`;
     button.style.visibility = "visible";
+    button2.style.visibility = "hidden";
     scoreText2.innerHTML = `Your score is ${scoreCount}`;
     arr.forEach((e) => {e.style.backgroundColor = "transparent";});
     arr2.forEach((e) => {e.style.backgroundColor = "transparent";});
