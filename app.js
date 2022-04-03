@@ -6,7 +6,7 @@ const newGame = document.getElementById("newGame");
 const holdButton1 = document.getElementById("holdButton1");
 const holdButton2 = document.getElementById("holdButton2");
 
-//new game button
+//new game button functionality
 newGame.addEventListener("click", () => {
     scoreCount = 0;
     scoreCount2 = 0;
@@ -39,15 +39,12 @@ const [dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9] = [
 //die1 functionality
 button.addEventListener('click', ()=>{
     let number = Math.floor(Math.random() * 6) + 1;
-    console.log(number);
     scoreCount += number;
     diceRollFunction(number);
     if (number == 1) {
-        console.log(number);
         scoreText.innerHTML = "Your rolled a 1, you lose!";
         scoreText2.innerHTML = "You win!";
         button.style.visibility = "hidden";
-        console.log(scoreText);
         holdButton1.style.visibility = "hidden";
     } else if (scoreCount > 20) {
         scoreText.innerHTML = `Your score is ${scoreCount}, you win!`;
@@ -63,6 +60,7 @@ button.addEventListener('click', ()=>{
     }
 })
 
+// die1 visual functionality
 let arr = [dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9];
 
 const diceRollFunction= function(param) {
@@ -119,15 +117,12 @@ const [dot2_1, dot2_2, dot2_3, dot2_4, dot2_5, dot2_6, dot2_7, dot2_8, dot2_9] =
 //die2 functionality
 button2.addEventListener('click', ()=>{
     let number2 = Math.floor(Math.random() * 6) + 1;
-    console.log(number2);
     scoreCount2 += number2;
     diceRollFunction2(number2);
     if (number2 == 1) {
-        console.log(number2);
         scoreText2.innerHTML = "Your rolled a 1, you lose!";
         scoreText.innerHTML = "You win!";
         button2.style.visibility = "hidden";
-        console.log(scoreText2);
         holdButton2.style.visibility = "hidden";
     } else if (scoreCount2 > 20) {
         scoreText2.innerHTML = `Your score is ${scoreCount2}, you win!`;
@@ -137,7 +132,6 @@ button2.addEventListener('click', ()=>{
         scoreCount2 = 0;
         });
         button2.style.visibility = "hidden";
-
         holdButton2.style.visibility = "visible";
     } else {
         scoreText2.innerHTML = `Your score is ${scoreCount2}`;
@@ -182,13 +176,14 @@ const diceRollFunction2 = function(param) {
 }
 
 
-//hold functionaity
+//hold functionaity player 1
 holdButton1.addEventListener("click", ()=> {
     button.style.visibility = "hidden";
     button2.style.visibility = "visible";
     holdButton1.style.visibility = "hidden";
     holdButton2.style.visibility = "visible";
 })
+//hold functionality player 2
 holdButton2.addEventListener("click", ()=> {
     button.style.visibility = "visible";
     button2.style.visibility = "hidden";
